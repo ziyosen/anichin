@@ -1,8 +1,12 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/api/index.js" }],
-  "functions": {
-    "api/*.js": {
-      "maxDuration": 10
+  "version": 2,
+  "public": false,
+  "cleanUrls": true,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "dist" }
     }
-  }
+  ]
 }
